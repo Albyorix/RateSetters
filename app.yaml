@@ -1,0 +1,19 @@
+application: rate-setters
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /
+  script: main.app
+- url: /provision
+  script: provision.app
+- url: /datadump
+  script: datadump.app
+- url: /risk
+  script: risk.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"

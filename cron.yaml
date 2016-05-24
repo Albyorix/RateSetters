@@ -1,0 +1,10 @@
+cron:
+- description: provision job
+  url: /provision
+  schedule: every 1 hours
+- description: datadump job
+  url: /datadump
+  schedule: every 24 hours
+- description: risk job
+  url: /risk
+  schedule: every 24 hours
