@@ -25,7 +25,7 @@ class Provision:
     def find_content_from_provision(self, provision_html):
         soup = BeautifulSoup(provision_html)
         security = int(soup.find('h2', 'hero-provision-amount').string[1:].replace(' million','000000'))
-        provision = int(soup.find('span', 'pf-balance').string[1:].replace(',',''))
+        provision = int(soup.find('span', 'value hidden-xs').contents[0][1:].replace(',',''))
         hour = str(datetime.datetime.now())[:19]
         line = hour + ', ' + str(provision) + ', ' + str(security)
         self.write += 'Data found in provision<br>'
